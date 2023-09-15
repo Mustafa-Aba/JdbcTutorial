@@ -4,36 +4,25 @@ import java.sql.*;
 
 public class Main {
     public static void main(String[] args) throws SQLException {
+        DbaseHelper dbaseHelper= new DbaseHelper();
+        dbaseHelper.dbaseConnect();
 
-        String url = "jdbc:mysql://localhost:3306/day01";
-        String user = "root";
-        String password = "maras46";
-        String sql = "SELECT * FROM sirket;";
-        try {
-            Class.forName("com.mysql.cj.jdbc.Driver");
-            System.out.println("Bağlantı başarılı");
-        } catch (ClassNotFoundException e) {
-            System.out.println("Driver bulunamadı"+e);
-        }
+//        String sql = "SELECT sirket_id, sirket_isim FROM sirket order by sirket_id";
+//
+//        try {
+//
+//            ResultSet rs    = dbaseHelper.stmt.executeQuery(sql);
+//
+//            while (rs.next()) {
+//                System.out.println(rs.getInt("sirket_id") + "\t" + rs.getString("sirket_isim"));
+//            }
+//            dbaseHelper.conn.close();
+//
+//        } catch (SQLException ex) {
+//            System.out.println(ex.getMessage());
+//        }
 
-        try {
-            Connection con = DriverManager.getConnection(url, user, password);
-            Statement stmt = con.createStatement();
-//            PreparedStatement pstmt=con.prepareStatement("INSERT INTO sirket values(101,'Honda');");
-//            con.prepareStatement("INSERT INTO sirket values(102,'Ford');").executeUpdate();
-//            con.prepareStatement("INSERT INTO sirket values(101,'Hyundai');").executeUpdate();
-//            pstmt.executeUpdate();
-            ResultSet rs = stmt.executeQuery(sql);
 
-            while (rs.next()) {
-                System.out.println();
-                System.out.println(rs.getInt(1)+" \t "+rs.getString(2));
-            }
-            con.close();
-        } catch (SQLException ex) {
-            System.out.println(ex.getMessage());
-        }
-        /*
         try {
             String url = "jdbc:mysql://localhost:3306/day01";
             String user = "root";
@@ -41,12 +30,12 @@ public class Main {
             Connection con = DriverManager.getConnection(url, user, password);
             Statement stmt = con.createStatement();
 
-            String isim = "'Honda'";
-            String sqlStatement = "delete from sirket where sirket_isim =" + isim;
+            String sqlStatement = "delete from sirket where sirket_isim = 'Honda'" ;
             int result = stmt.executeUpdate(sqlStatement);
+
             System.out.println(result + " kayit silindi!");
 
-            int result1 = stmt.executeUpdate("update sirket set sirket_isim = 'Anadol' where sirket_isim = 'Ford'");
+            int result1 = stmt.executeUpdate("update sirket set sirket_isim = 'Anadol' ");
             System.out.println(result1 + " kayit güncellendi!");
 
             int result2 = stmt.executeUpdate("insert into sirket values(105, 'Opel')");
@@ -54,7 +43,7 @@ public class Main {
             con.close();
         } catch (SQLException e) {
             System.out.println(e);
-        }*/
+        }
     }
 
 }

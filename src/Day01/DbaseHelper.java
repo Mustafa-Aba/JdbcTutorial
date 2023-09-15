@@ -1,4 +1,6 @@
-package TelefonRehberi;
+package Day01;
+
+import TelefonRehberi.kayitSinifi;
 
 import java.sql.*;
 import java.util.ArrayList;
@@ -8,15 +10,22 @@ public class DbaseHelper {
     Statement stmt = null;
     PreparedStatement pstmt = null;
 
-    private void dbaseConnect() {
-        String DB_URL = "jdbc:mysql://localhost:3306/";
+    public void dbaseConnect() {
+        String DB_URL = "jdbc:mysql://localhost:3306/day01";
         String USERNAME = "root";
         String PASSWORD = "maras46";
         try {
             conn = DriverManager.getConnection(DB_URL, USERNAME, PASSWORD);
+            stmt  = conn.createStatement();
         } catch (
                 SQLException e) {
             throw new RuntimeException(e);
+        }
+        try {
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            System.out.println("Bağlantı başarılı");
+        } catch (ClassNotFoundException e) {
+            System.out.println("Driver bulunamadı"+e);
         }
     }
 
