@@ -117,8 +117,8 @@ public class Utilities {
         try {
             pStatement = connection.prepareStatement(sql_query);
             pStatement.setInt(1, id);//table'da isim column'a kayıt obj isim variable record olarak insert yapıldı
-            pStatement.executeUpdate();// mysql'deki db'deki ilgili table ve column'a record silmek için sql query run edildi(şimşek)
-
+           int adet= pStatement.executeUpdate();// mysql'deki db'deki ilgili table ve column'a record silmek için sql query run edildi(şimşek)
+            System.out.println(adet +" adet silindi");
         } catch (SQLException e) {
             System.out.println(e.toString());
         } finally {
@@ -146,7 +146,6 @@ public class Utilities {
                 k.setTel(resultSet.getString(3));//iterator ie db den gelen result recodrlar obj'de ilgili ins. variable atandı
                 liste.add(k);//iterator ie db den gelen result recodrlar obj liste eklendi
             }
-
 
         } catch (SQLException e) {
             System.out.println(e.toString());

@@ -31,7 +31,12 @@
   </component>
   <component name="DBNavigator.Project.DatabaseConsoleManager">
     <connection id="a5a89dcf-5917-481a-a6d0-5edea8d3a98e">
-      <console name="MySQLConnection" type="STANDARD" schema="mysql" session="Main" />
+      <console name="MySQLConnection" type="STANDARD" schema="javacan" session="Main" />
+      <console name="MySQLConnection 1" type="STANDARD" schema="mysql" session="Main"><![CDATA[CREATE TABLE calisanlar(
+id CHAR(5),
+isim VARCHAR(50),
+maas int,
+CONSTRAINT calisanlar_id_pk PRIMARY KEY (id));]]></console>
     </connection>
     <connection id="a0d492a2-d88e-49bc-815e-c2ef767a9870">
       <console name="Connection" type="STANDARD" schema="telefonrehberi" session="Main"><![CDATA[select
@@ -61,18 +66,18 @@ from
     <last-used-providers />
   </component>
   <component name="DBNavigator.Project.DatabaseFileManager">
-    <open-files>
-      <object connection-id="a0d492a2-d88e-49bc-815e-c2ef767a9870" object-ref="schemas/telefonrehberi/tables/tel_nolar" />
-    </open-files>
+    <open-files />
   </component>
   <component name="DBNavigator.Project.DatasetFilterManager">
     <filter-actions connection-id="a0d492a2-d88e-49bc-815e-c2ef767a9870" dataset="day01.sirket" active-filter-id="EMPTY_FILTER" />
     <filter-actions connection-id="a0d492a2-d88e-49bc-815e-c2ef767a9870" dataset="telefonrehberi.tel_nolar" active-filter-id="EMPTY_FILTER" />
     <filter-actions connection-id="a0d492a2-d88e-49bc-815e-c2ef767a9870" dataset="day01.sirket2" active-filter-id="EMPTY_FILTER" />
     <filter-actions connection-id="a5a89dcf-5917-481a-a6d0-5edea8d3a98e" dataset="01_create_drop_insert_table.ebikgabik" active-filter-id="EMPTY_FILTER" />
+    <filter-actions connection-id="a5a89dcf-5917-481a-a6d0-5edea8d3a98e" dataset="javacan.personel" active-filter-id="EMPTY_FILTER" />
     <filter-actions connection-id="a5a89dcf-5917-481a-a6d0-5edea8d3a98e" dataset="day01.sirket" active-filter-id="EMPTY_FILTER" />
     <filter-actions connection-id="a5a89dcf-5917-481a-a6d0-5edea8d3a98e" dataset="codechallenge.bolumler" active-filter-id="EMPTY_FILTER" />
     <filter-actions connection-id="a5a89dcf-5917-481a-a6d0-5edea8d3a98e" dataset="telefonrehberi.tel_nolar" active-filter-id="EMPTY_FILTER" />
+    <filter-actions connection-id="a5a89dcf-5917-481a-a6d0-5edea8d3a98e" dataset="javacan.talebeler" active-filter-id="EMPTY_FILTER" />
     <filter-actions connection-id="a5a89dcf-5917-481a-a6d0-5edea8d3a98e" dataset="day01.sirket2" active-filter-id="EMPTY_FILTER" />
   </component>
   <component name="DBNavigator.Project.ExecutionManager">
@@ -81,6 +86,9 @@ from
   <component name="DBNavigator.Project.ObjectQuickFilterManager">
     <last-used-operator value="EQUAL" />
     <filters />
+  </component>
+  <component name="DBNavigator.Project.ScriptExecutionManager" clear-outputs="true">
+    <recently-used-interfaces />
   </component>
   <component name="DBNavigator.Project.Settings">
     <connections>

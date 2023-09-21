@@ -129,7 +129,8 @@ public class Runner {
         System.out.printf("%4S%20S%17S\n", "--", "------------", "------------");
         for (int i = 0; i < dbMethods.listData().size(); i++) {
             // System.out.printf("%4d%20s%17s\n", telList.get(i).getId(), telList.get(i).getIsim(), telList.get(i).getTel());
-            System.out.printf("%4d%20s%17s\n", dbMethods.listData().get(i).getId(), dbMethods.listData().get(i).getIsim(), dbMethods.listData().get(i).getTel());
+            System.out.printf("%4d%20s%17s\n", dbMethods.listData().get(i).getId(),
+                    dbMethods.listData().get(i).getIsim(), dbMethods.listData().get(i).getTel());
         }
         if (dbMethods.listData().size() == 0) {
             System.out.println("listelenecek kayıt bulunamadı");
